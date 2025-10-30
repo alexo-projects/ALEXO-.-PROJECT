@@ -18,17 +18,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run AI Agent
-        run: python agent/main.py
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AI Agent Chain
+        run: python /src/update_readme.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name 'Alexo AI Agent'
           git config --global user.email 'agent@alexo.project'
           git add README.md
-          # Check if there are changes to commit
           if ! git diff --staged --quiet; then
-            git commit -m "chore: Update README with new AI insight"
+            git commit -m "chore(agent): Update README with new AI insight"
             git push
           else
             echo "No changes to commit."
