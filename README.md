@@ -99,6 +99,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact (联系)
 
-Your Name - [@YourTwitter](https://x.com/AlexoProject)
+Your Name - [@AlexoProject](https://x.com/AlexoProject)
 
 Project Link: [https://github.com/alexo-projects/ALEXO-.-PROJECT.git](https://github.com/alexo-projects/ALEXO-.-PROJECT.git)
