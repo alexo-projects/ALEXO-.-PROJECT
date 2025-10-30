@@ -60,7 +60,7 @@ To get started with the Alexo Project, follow the steps below.
     ```
 2.  Install dependencies:
     ```sh
-    cd YOUR_REPO
+    cd ALEXO-.-PROJECT
     npm install
     ```
 3.  Run a local node:
