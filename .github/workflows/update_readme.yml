@@ -1,0 +1,35 @@
+name: Update README with AI Agent Insight
+
+on:
+  schedule:
+    # Runs every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run AI Agent
+        run: python agent/main.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'Alexo AI Agent'
+          git config --global user.email 'agent@alexo.project'
+          git add README.md
+          # Check if there are changes to commit
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: Update README with new AI insight"
+            git push
+          else
+            echo "No changes to commit."
+          fi
